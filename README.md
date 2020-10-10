@@ -75,16 +75,18 @@ curl --location --request GET 'http://localhost:8080/products/v1/devices/search?
             "battery": "Removable NiMH 800 mAh battery"
         }
     }
-] ```
+] 
+```
               
-## Curl Collection for the request priceEur
+### Curl Collection for the request priceEur
  
 curl --location --request GET 'http://localhost:8080/products/v1/devices/search?priceEur=200' \
 --header 'Content-Type: application/json'
         
  #### Response
  
-```[
+```python
+[
     {
         "_id": "5f8044ace1656d04540d54db",
         "id": 27999,
@@ -265,16 +267,20 @@ curl --location --request GET 'http://localhost:8080/products/v1/devices/search?
             "battery": "Removable NiMH 915 mAh battery"
         }
     }
-]```
+]
+```
           
  #### Curl request for sim type
  
+```curl
 curl --location --request GET 'http://localhost:8080/products/v1/devices/search?sim=eSim' \
 --header 'Content-Type: application/json' 
+```
 
 #### Response
 
-```[
+```json
+[
     {
         "_id": "5f8044ace1656d04540d54ac",
         "id": 25846,
@@ -599,7 +605,8 @@ curl --location --request GET 'http://localhost:8080/products/v1/devices/search?
             "battery": "Li-Po 6470 mAh battery (24.3 Wh)"
         }
     }
-] ```
+] 
+```
         
  ### Clone your repository to your local machine
  1) Download the  Device management project to your local computer
