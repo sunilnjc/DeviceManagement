@@ -32,12 +32,13 @@ do one or more diagrams, as you see suitable, to describe your application funct
 
 #### Curl for the request announceDate and priceEur
 
-```curl --location --request GET 'http://localhost:8080/products/v1/devices/search?announceDate=1999&priceEur=200' \
---header 'Content-Type: application/json' ```
+curl --location --request GET 'http://localhost:8080/products/v1/devices/search?announceDate=1999&priceEur=200' \
+--header 'Content-Type: application/json' 
               
-#### Output Response
+### Output Response
 
-```[
+```python
+[
     {
         "_id": "5f8044ace1656d04540d5502",
         "id": 28354,
@@ -76,10 +77,10 @@ do one or more diagrams, as you see suitable, to describe your application funct
     }
 ] ```
               
- ### Curl Collection for the request priceEur
+## Curl Collection for the request priceEur
  
-```curl --location --request GET 'http://localhost:8080/products/v1/devices/search?priceEur=200' \
---header 'Content-Type: application/json' ```
+curl --location --request GET 'http://localhost:8080/products/v1/devices/search?priceEur=200' \
+--header 'Content-Type: application/json'
         
  #### Response
  
@@ -268,8 +269,8 @@ do one or more diagrams, as you see suitable, to describe your application funct
           
  #### Curl request for sim type
  
-```curl --location --request GET 'http://localhost:8080/products/v1/devices/search?sim=eSim' \
---header 'Content-Type: application/json' ```
+curl --location --request GET 'http://localhost:8080/products/v1/devices/search?sim=eSim' \
+--header 'Content-Type: application/json' 
 
 #### Response
 
