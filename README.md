@@ -5,9 +5,6 @@
 URI: /products/v1/devices/search
 
 ### Requirements
-At this URL: https://a511e938-a640-4868-939e-6eef06127ca1.mock.pstmn.io/handsets/list,
-you will find a JSON file with a sample “Mobile handset” database. The data in this JSON is
-static, I.e it doesn’t get updated.
 1. Create a Spring Boot application exposing a search API (GET /mobile/search?) that will
 allow the caller to retrieve one or more mobile handset record based on the passed
 search criteria.
@@ -29,6 +26,10 @@ do one or more diagrams, as you see suitable, to describe your application funct
 | announceDate | RequestParam | Determines date of announcement of the product | String | No
 
 ### Data Model 
+
+### Swagger Documentation
+
+http://localhost:8080/products/swagger-ui.html
 
 #### Curl for the request announceDate and priceEur
 
@@ -616,7 +617,11 @@ curl --location --request GET 'http://localhost:8080/products/v1/devices/search?
  5) mvn clean install (Maven should be installed in the system and should be configured in the path variable)
  
  ### Code Coverage
+  Testing is in progress
+  
+ ### Kafka Topic
+ domain.device.creation
  
- 1) After successfull build go to cd DeviceManagement/target/site/jacoco
+ ### Database
+ MongoDB
  
- 2) Open index.html file to view the code coverage
