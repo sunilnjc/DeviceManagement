@@ -11,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class SearchQuery implements Serializable {
 
 	/**
-	 * 
+	 * author sunil
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long priceEur;
