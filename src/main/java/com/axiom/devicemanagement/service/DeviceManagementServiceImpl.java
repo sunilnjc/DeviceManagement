@@ -6,6 +6,7 @@ import java.util.Objects;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -16,6 +17,12 @@ import com.axiom.devicemanagement.controller.DeviceManagementController;
 import com.axiom.devicemanagement.entity.Device;
 import com.axiom.devicemanagement.vo.SearchQuery;
 
+/**
+ * 
+ * @author Sunil
+ *
+ */
+
 @Service
 public class DeviceManagementServiceImpl implements DeviceManagementService {
 
@@ -24,6 +31,8 @@ public class DeviceManagementServiceImpl implements DeviceManagementService {
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
+	@Override
+	@Cacheable(value = "devices")
 	public List<Device> fetchDeviceList(SearchQuery searchQuery) {
 
 		Criteria criteria = null;

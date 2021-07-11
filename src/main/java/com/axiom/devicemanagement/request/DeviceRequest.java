@@ -1,8 +1,5 @@
-package com.axiom.devicemanagement.entity;
+package com.axiom.devicemanagement.request;
 
-import java.io.Serializable;
-
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -11,22 +8,20 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @Document
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @ToString
 @JsonInclude(Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ApiModel
-public class Device implements Serializable {
-
-	@Id
-	@ApiModelProperty(value = "Unique Device ID")
-	private String _id;
+public class DeviceRequest {
 
 	@ApiModelProperty(value = "Unique Device ID")
 	private Long id;

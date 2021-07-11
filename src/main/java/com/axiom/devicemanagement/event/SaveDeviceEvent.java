@@ -1,28 +1,23 @@
-package com.axiom.devicemanagement.entity;
-
-import java.io.Serializable;
+package com.axiom.devicemanagement.event;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.axiom.devicemanagement.entity.Hardware;
+import com.axiom.devicemanagement.entity.Release;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-@Document
 @Data
 @NoArgsConstructor
-@ToString
-@JsonInclude(Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
-@ApiModel
-public class Device implements Serializable {
+@AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@ApiModel(value = "Event model for device creation data", description = "Event model for device data")
+public class SaveDeviceEvent extends EventCommand {
 
 	@Id
 	@ApiModelProperty(value = "Unique Device ID")
@@ -51,4 +46,5 @@ public class Device implements Serializable {
 
 	@ApiModelProperty(value = "Hardware")
 	private Hardware hardware;
+
 }

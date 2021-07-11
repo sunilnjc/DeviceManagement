@@ -6,6 +6,8 @@ public class Constants {
 	
 	public static final String SEARCH = "/search";
 	
+	public static final String SAVE = "/save";
+	
 	public static final String ID = "/{id}";
 	
 	public static final String DEVICES = "/devices";

@@ -1,6 +1,4 @@
-package com.axiom.devicemanagement.entity;
-
-import java.io.Serializable;
+package com.axiom.devicemanagement.request;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -8,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Release implements Serializable{
+public class Release {
 
 	@ApiModelProperty(value = "Announcement Date")
 	private String announceDate;

@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: Device Registration Service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/DevicesDB?retryWrites=true&w=majority
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          min-partition-count: 1
+          replication-factor: 1 
+#        bindings:               
+#          arabbank-bankey:
+#            consumer:
+#              start-offset: latest
+      bindings:
+        out_device_registration: 
+          destination: domain.device.creation
+          content-type: application/json
+          group: devicemanagement
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 60000
+    database: 0
+ 
+       
+server:
+  port: 8080
+  servlet:
+    context-path: /products
+

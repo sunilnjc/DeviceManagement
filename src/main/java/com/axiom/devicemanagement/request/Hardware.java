@@ -1,6 +1,4 @@
-package com.axiom.devicemanagement.entity;
-
-import java.io.Serializable;
+package com.axiom.devicemanagement.request;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -8,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Hardware implements Serializable{
+public class Hardware {
 
 	@ApiModelProperty(value = "Audio Jack")
 	private String audioJack;
