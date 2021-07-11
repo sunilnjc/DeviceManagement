@@ -31,6 +31,29 @@ do one or more diagrams, as you see suitable, to describe your application funct
 
 http://localhost:8080/products/swagger-ui.html
 
+#### Curl for the POST request
+
+curl --location --request POST 'http://localhost:8080/products/v1/devices/save' \
+--header 'Content-Type: application/json' \
+--data-raw '    {
+        "id": 28994,
+        "brand": "Apple",
+        "phone": "Apple iPhone XR",
+        "picture": "https://cdn2.gsmarena.com/vv/bigpic/apple-iphone-xr-new.jpg",
+        "release": {
+            "announceDate": "2018 September",
+            "priceEur": 850
+        },
+        "sim": "Nano-SIM eSIM",
+        "resolution": "828 x 1792 pixels",
+        "hardware": {
+            "audioJack": "No",
+            "gps": "Yes with A-GPS",
+            "battery": "Li-Ion 2942 mAh battery"
+        }
+    }'
+
+
 #### Curl for the request announceDate and priceEur
 
 curl --location --request GET 'http://localhost:8080/products/v1/devices/search?announceDate=1999&priceEur=200' \
