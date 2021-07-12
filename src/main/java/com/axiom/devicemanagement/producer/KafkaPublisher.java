@@ -1,5 +1,6 @@
 package com.axiom.devicemanagement.producer;
 
+import org.apache.kafka.common.KafkaException;
 import org.springframework.stereotype.Component;
 
 import com.axiom.devicemanagement.channel.GeneralChannel;
@@ -30,7 +31,7 @@ public class KafkaPublisher {
 				.send(messageBuilderFactory.getMessageBuilder(event).setHeader("type", typeName).build()))
 			log.info("Publishing {} event has been published to kafka successfully", event.getClass().getSimpleName());
 		else
-			throw new RuntimeException(
+			throw new KafkaException(
 					"Error while sending ".concat(event.getClass().getSimpleName()).concat(" event to kafka."));
 	}
 }

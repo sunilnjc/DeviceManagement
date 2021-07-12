@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
@@ -46,7 +45,33 @@ public class DeviceManagementController {
 	@Autowired
 	SaveDeviceService saveDeviceService;
 
-	
+//	@Autowired
+//	private AuthenticationManager authenticationManager;
+
+//	@Autowired
+//	private JwtUtil jwtTokenUtil;
+//
+//	@Autowired
+//	private AuthenticateUserDetailsService userDetailsService;
+
+//	@PostMapping(value = "/authenticate")
+//	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
+//			throws Exception {
+//
+//		try {
+//			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+//					authenticationRequest.getUsername(), authenticationRequest.getPassword()));
+//		} catch (BadCredentialsException e) {
+//			throw new Exception("Incorrect username or password", e);
+//		}
+//
+//		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+//
+//		final String jwt = jwtTokenUtil.generateToken(userDetails);
+//
+//		return ResponseEntity.ok(new AuthenticationResponse(jwt));
+//	}
+
 	@GetMapping(value = Constants.SEARCH)
 	public ResponseEntity<?> fetchDeviceDetails(@RequestParam(value = "priceEur", required = false) Long priceEur,
 			@RequestParam(value = "sim", required = false) String sim,

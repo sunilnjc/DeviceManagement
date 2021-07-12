@@ -3,6 +3,7 @@ package com.axiom.devicemanagement.service;
 import java.util.List;
 import java.util.Objects;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.util.StringUtils;
 
 import com.axiom.devicemanagement.controller.DeviceManagementController;
 import com.axiom.devicemanagement.entity.Device;
+import com.axiom.devicemanagement.exception.ResourceNotFoundException;
 import com.axiom.devicemanagement.vo.SearchQuery;
 
 /**
@@ -66,6 +68,11 @@ public class DeviceManagementServiceImpl implements DeviceManagementService {
 		logger.info("Query Criteria formed = {}", query);
 
 		List<Device> result = mongoTemplate.find(query, Device.class, "device");
+		
+		if(CollectionUtils.isEmpty(result)) {
+			logger.error("No resources found for the request");
+			throw new ResourceNotFoundException("Resource not found for the request");
+		}
 
 		return result;
 	}
